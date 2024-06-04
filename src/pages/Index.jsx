@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container, VStack, HStack, Text, Input, Button, Image, Box, IconButton, useToast } from "@chakra-ui/react";
-import { FaShoppingCart, FaSearch, FaCamera } from "react-icons/fa";
+import { Container, VStack, HStack, Text, Input, Button, Image, Box, IconButton, useToast, useColorMode } from "@chakra-ui/react";
+import { FaShoppingCart, FaSearch, FaCamera, FaMoon, FaSun } from "react-icons/fa";
 
 const herbsData = [
   {
@@ -77,6 +77,7 @@ const HerbCard = ({ herb }) => {
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const { colorMode, toggleColorMode } = useColorMode();
   const filteredHerbs = herbsData.filter((herb) => herb.name.toLowerCase().includes(searchTerm.toLowerCase()) || herb.scientificName.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
@@ -85,7 +86,8 @@ const Index = () => {
         <Text fontSize="3xl" fontWeight="bold">
           Herbify
         </Text>
-        <HStack width="100%">
+        <HStack width="100%" justifyContent="space-between">
+          <IconButton aria-label="Toggle Dark Mode" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} />
           <Input placeholder="Search for herbs or diseases..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           <IconButton aria-label="Search" icon={<FaSearch />} />
           <IconButton aria-label="Capture Image" icon={<FaCamera />} />
