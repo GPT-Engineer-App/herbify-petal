@@ -3,7 +3,7 @@ import { HStack, Button, Image } from "@chakra-ui/react";
 
 const NavBar = () => {
   return (
-    <HStack spacing={4} padding={4} justifyContent="flex-end">
+    <HStack spacing={4} padding={4} justifyContent="flex-start">
       <Image src="https://via.placeholder.com/50" alt="Logo" boxSize="50px" />
       <Button as={Link} to="/" colorScheme="teal">
         Home
