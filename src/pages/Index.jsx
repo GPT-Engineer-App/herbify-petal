@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, VStack, HStack, Text, Input, Button, Image, Box, IconButton, useToast, useColorMode } from "@chakra-ui/react";
+import { Container, VStack, HStack, Text, Input, Button, Image, Box, IconButton, useToast, useColorMode, Link } from "@chakra-ui/react";
 import { FaShoppingCart, FaSearch, FaCamera, FaMoon, FaSun } from "react-icons/fa";
 
 const herbsData = [
