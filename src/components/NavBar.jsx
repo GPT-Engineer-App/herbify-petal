@@ -14,6 +14,9 @@ const NavBar = () => {
       <Button as={Link} to="/signup" colorScheme="teal">
         Sign Up
       </Button>
+      <Button as={Link} to="/admin" colorScheme="teal">
+        Admin
+      </Button>
     </HStack>
   );
 };
